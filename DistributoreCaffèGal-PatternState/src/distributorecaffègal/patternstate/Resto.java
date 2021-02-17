@@ -24,4 +24,13 @@ public class Resto extends Caffe {
         return d.getTot();
     }
 
+    public double verificaTotZero(Caffe c) {
+        if (c.getTot() == 0) {
+            return 0;
+        }
+        return tot;
+    }
+
+    
+    
 }
