@@ -1,9 +1,12 @@
 package distributorecaffègal.patternstate;
 
+public class Ritiro implements Event {
 
-public class Ritiro {
+    private String s;
 
     public Ritiro() {
-        System.out.println("Pronto!");
+        s = "Pronto";
+        System.out.println(s);
     }
+    
 }

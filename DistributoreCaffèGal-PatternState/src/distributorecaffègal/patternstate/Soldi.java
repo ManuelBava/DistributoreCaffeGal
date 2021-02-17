@@ -3,26 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package distributorecaffègal.patternstate;
 
+public class Soldi extends Caffe {
 
-public class Soldi extends Caffe{
-    
     private double soldi;
 
     public Soldi() {
+        this.tot += soldi;
     }
 
     public double getTot() {
         return soldi;
     }
-
-    public void setTot(double tot) {
-        this.tot = tot;
-        soldi+=soldi/tot;       
-    }
-     
-    
-    
 }

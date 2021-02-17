@@ -15,6 +15,7 @@ public class AutomaDistributore implements State {
 
     @Override
     public void next(Event e) {
+        Caffe c = new Caffe();
         System.out.println("Siamo nello stato iniziale: " + stato);
         System.out.println("Ricevuto evento " + e);
         stato.next(e);
@@ -25,8 +26,37 @@ public class AutomaDistributore implements State {
 
         @Override
         public void next(Event e) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            if (e instanceof Caffe) {
+                stato = new Attesa();
+            } else if (e instanceof Resto) {
+                stato = new Attesa();
+            } else if (e instanceof Soldi) {
+                stato = new Attesa();
+            } else {
+                System.out.println("Errore!");
+            }
         }
 
+        private class Erogazione implements State {
+
+            @Override
+            public void next(Event e) {
+                if (e instanceof CaffePronto) {
+                    stato = new Pronto();
+                }
+            }
+
+        }
+
+        private class Pronto implements State {
+
+            @Override
+            public void next(Event e) {
+                if (e instanceof Ritiro) {
+                    stato = new Attesa();
+                }
+            }
+
+        }
     }
 }

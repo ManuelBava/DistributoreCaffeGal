@@ -13,15 +13,15 @@ public class Resto extends Caffe {
 
     private double resto;
 
-    public Resto(double resto) {
-        this.resto = resto;
+    public Resto() {
+        returnTot();
     }
 
-    public double returnTot(Caffe d) {
-        if (d.getTot() > 0) {
-            d.setTot(0);
+    public double returnTot() {
+        if (getTot() > 0) {
+            setTot(0);
         }
-        return d.getTot();
+        return getTot();
     }
 
     public double verificaTotZero(Caffe c) {

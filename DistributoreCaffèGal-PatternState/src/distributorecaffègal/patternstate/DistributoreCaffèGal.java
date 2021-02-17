@@ -12,7 +12,13 @@ package distributorecaffègal.patternstate;
 public class DistributoreCaffèGal {
 
     public static void main(String[] args) {
-        
+        AutomaDistributore a = new AutomaDistributore();
+
+        a.next(new Caffe(0.32));
+        a.next(new Resto());
+        a.next(new Soldi());
+        a.next(new CaffePronto());
+        a.next(new Ritiro());
     }
-    
+
 }
